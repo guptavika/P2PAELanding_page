@@ -1,12 +1,13 @@
 import React from 'react'
+import Header from './Components/Header'
+import HomeHero from './Components/Home'
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1> this i snew page</h1>
-      <p>thidigayrwcdhs jfwuvf f hvfgcsjhcvs jkjsc jha</p>
-      <h2>this is new page</h2>
-    </div>
+    <>
+    <Header/>
+    <HomeHero/>
+    </>
   )
 }
 
