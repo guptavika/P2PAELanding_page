@@ -2,12 +2,15 @@
 import React from 'react'
 import Footer from './Components/Footer'
 import AboutUs from './Components/AboutUs'
+import Header from './Components/Header'
 
 function App() {
   return (
     <div>
-      <Footer/>
+      <Header/>
+    
       <AboutUs/>
+        <Footer/>
     </div>
   )
 }
