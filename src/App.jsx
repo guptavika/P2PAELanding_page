@@ -1,11 +1,12 @@
+
 import React from 'react'
+import Footer from './Components/Footer'
+import AboutUs from './Components/AboutUs'
 
 const App = () => {
   return (
     <div>
-      <h1> this i snew page</h1>
-      <p>thidigayrwcdhs jfwuvf f hvfgcsjhcvs jkjsc jha</p>
-      <h2>this is new page</h2>
+      <AboutUs/>
     </div>
   )
 }
