@@ -3,7 +3,7 @@ import React from 'react'
 import Footer from './Components/Footer'
 import AboutUs from './Components/AboutUs'
 
-const App = () => {
+function App() {
   return (
     <div>
       <Footer/>
