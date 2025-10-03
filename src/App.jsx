@@ -6,6 +6,7 @@ import AboutUs from './Components/AboutUs'
 const App = () => {
   return (
     <div>
+      <Footer/>
       <AboutUs/>
     </div>
   )
