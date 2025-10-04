@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Divider, Container, Grid, Avatar } from "@mui/material";
+import { Box, Typography, Divider, Container, Grid, Avatar,Button } from "@mui/material";
 
 const AboutSection = () => {
   const valuesData = [
@@ -11,7 +11,7 @@ const AboutSection = () => {
   {
     id: 2,
     title: "Innovation",
-    desc: "We embrace creativity and seek to improve our products and services constantly.",
+    desc: "We embrace creativity and seek to ind services constantly.",
   },
   {
     id: 3,
@@ -74,6 +74,7 @@ const AboutSection = () => {
         position: "relative",
         overflow: "hidden",
         color: "white",
+        scrollbarWidth:"none",
       }}
     >
       {/* Background Image */}
@@ -343,9 +344,108 @@ const AboutSection = () => {
           ))}
         </Grid>
       </Container>
+      <Grid
+  container
+  spacing={{ xs: 2, md: 40 }}
+  sx={{
+    boxSizing: "border-box",
+    display: "flex",
+    flexFlow: "wrap",
+    width: { xs: "calc(100% + 16px)", md: "calc(100% + 48px)" },
+    paddingTop: { xs: "4rem", md: "10rem" },
+    paddingLeft: { xs: "1rem", md: "10rem" },
+    paddingRight: { xs: "1rem", md: "48px" },
+  }}
+>
+  {/* Left Content */}
+  <Grid 
+    item 
+    xs={12} 
+    lg={6}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      gap: { xs: 1, md: 0 }
+    }}
+  >
+    <Typography
+      variant="h4"
+      gutterBottom
+      sx={{
+        color: "#140a53",
+        fontWeight: 600,
+      }}
+    >
+      Get Started
+    </Typography>
+
+    <Typography
+      variant="h6"
+      sx={{
+        color: "#140a53",
+        fontWeight: 500,
+        mb: { xs: 2, md: 0 }
+      }}
+    >
+      Download OurApp for free on the Google Play <br />
+      store – or sign up online today.
+    </Typography>
+
+    {/* Button - Visible only on mobile */}
+    <Box
+      sx={{
+        display: { xs: "block", lg: "none" },
+      }}
+    >
+      <Button
+        variant="contained"
+        size="large"
+        disableElevation
+        sx={{
+          backgroundColor: "#140a53",
+          fontWeight: 600,
+          textTransform: "none",
+          "&:hover": {
+            backgroundColor: "#0f0842",
+          },
+        }}
+      >
+        Sign Up
+      </Button>
+    </Box>
+  </Grid>
+
+  {/* Right Side Button - Visible only on desktop */}
+  <Grid
+    item
+    xs={12}
+    lg={6}
+    sx={{
+      display: { xs: "none", lg: "flex" },
+      alignItems: "center",
+    }}
+  >
+    <Button
+      variant="contained"
+      size="large"
+      disableElevation
+      sx={{
+        backgroundColor: "#140a53",
+        fontWeight: 600,
+        textTransform: "none",
+        "&:hover": {
+          backgroundColor: "#0f0842",
+        },
+      }}
+    >
+      Sign Up
+    </Button>
+  </Grid>
+</Grid>
     </Box>
     </>
   );
 };
 
 export default AboutSection;
+

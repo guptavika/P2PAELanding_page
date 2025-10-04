@@ -1,18 +1,27 @@
-
-import React from 'react'
-import Footer from './Components/Footer'
-import AboutUs from './Components/AboutUs'
-import Header from './Components/Header'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-      <Header/>
-    
-      <AboutUs/>
-        <Footer/>
-    </div>
-  )
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Footer/>
+    </>
+  );
 }
 
-export default App
+export default App;
