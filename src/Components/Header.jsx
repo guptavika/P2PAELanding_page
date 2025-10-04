@@ -13,7 +13,7 @@ export default function Header() {
     <AppBar
       position="fixed"
       sx={{
-        background: "linear-gradient(90deg, #5A0FC8, #480DC6)",
+        background: "linear-gradient(90deg, #5A0FC8, #480dc6ff)",
         py: 1,
       }}
       elevation={0}
