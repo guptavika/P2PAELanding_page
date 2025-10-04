@@ -1,28 +1,11 @@
-// import React from "react";
-// import Header from './Components/Header'
-// import Footer from './Components/Footer'
-// import HomeHero from './Components/Home'
-// import HomeCenter from './Components/HomeCenter'
-// import HelpYou from './Components/HelpYou'
-// import CoreValues from './Components/CoreValues'
-// import BusinessesCard from './Components/BusinessesCard'
-// import MissionVisionValues from './Components/Mission'
-// import HeroSection from './Components/HeroSection'
+import React from "react";
+import { Container, Typography } from "@mui/material";
 
-// function Home() {
-//   return (
-//     <>
-//       <Header/>
-//       <HomeHero/>
-//       <HomeCenter />
-//       <HelpYou />
-//       <CoreValues />
-//       <BusinessesCard />
-//       <MissionVisionValues />
-//       <HeroSection />
-//       <Footer />
-//     </>
-//   );
-// }
+const Home = () => (
+  <Container sx={{ mt: 4 }}>
+    <Typography variant="h4" gutterBottom>Welcome to Home Page</Typography>
+    <Typography>This is the landing page of your project.</Typography>
+  </Container>
+);
 
-// export default Home;
+export default Home;

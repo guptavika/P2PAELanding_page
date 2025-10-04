@@ -1,31 +1,27 @@
-
-import React from 'react'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
-import HomeHero from './Components/Home'
-import HomeCenter from './Components/HomeCenter'
-import HelpYou from './Components/HelpYou'
-import CoreValues from './Components/CoreValues'
-import BusinessesCard from './Components/BusinessesCard'
-import MissionVisionValues from './Components/MIssion'
-import HeroSection from './Components/HeroSection'
-// import Home from './Pages/Home'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Footer from "./components/Footer";
 
 function App() {
-  return ( 
-    <div>
-      <Header/>
-      <HomeHero/>
-      <HomeCenter/>
-      <HelpYou/>
-      <CoreValues/>
-      <BusinessesCard/>
-      <MissionVisionValues/>
-      <HeroSection/>
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer/>
-      {/* <Home/> */}
-    </div>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
