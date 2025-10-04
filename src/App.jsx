@@ -12,7 +12,7 @@ import HeroSection from './Components/HeroSection'
 // import Home from './Pages/Home'
 
 function App() {
-  return (
+  return ( 
     <div>
       <Header/>
       <HomeHero/>
