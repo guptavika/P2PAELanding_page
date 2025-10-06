@@ -11,6 +11,7 @@ import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import PeopleIcon from "@mui/icons-material/People";
 import SecurityIcon from "@mui/icons-material/Security";
+import * as motion from "motion/react-client";
 
 const coreValues = [
   {
@@ -45,12 +46,26 @@ const CoreValues = () => {
       <Container maxWidth="lg">
         {/* Heading */}
         <Box textAlign="center" mb={6}>
-          <Typography variant="h4" fontWeight="bold">
-            Our Core Values
-          </Typography>
+          <motion.div
+            animate={{ y: [0, 13, 0] }} // moves 0px → 30px down → back to 0
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Typography variant="h4" fontWeight="bold">
+              Our Core Values
+            </Typography>
+          </motion.div>
+          <motion.div
+            animate={{x: [-900, 0] }} 
+            transition={{duration: 1.5,}}
+          >
           <Typography variant="subtitle1" color="text.secondary">
             The guiding principles behind everything we do
           </Typography>
+          </motion.div>
         </Box>
 
         {/* 4-column layout (always one line on desktop) */}
@@ -70,7 +85,6 @@ const CoreValues = () => {
                   p: 0.5,
                   height: "100%",
                   "&:hover": {
-
                     transform: "translateY(-9px)",
                     boxShadow: "0 6px 25px rgba(0,0,0,0.12)",
                   },

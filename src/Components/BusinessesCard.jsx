@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography, Paper } from "@mui/material";
+import * as motion from "motion/react-client";
 
 const BusinessStats = () => {
   return (
@@ -29,17 +30,23 @@ const BusinessStats = () => {
           >
             Made in India
           </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: "bold",
-              color: "#fff",
-              mb: { xs: 3, sm: 4 },
-              textAlign: { xs: "center", md: "left" },
-            }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 9 }}
           >
-            Made for Businesses
-          </Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bold",
+                color: "#fff",
+                mb: { xs: 3, sm: 4 },
+                textAlign: { xs: "center", md: "left" },
+              }}
+            >
+              Made for Businesses
+            </Typography>
+          </motion.div>
 
           <Grid
             container
@@ -53,36 +60,51 @@ const BusinessStats = () => {
               { value: "250L+", label: "Transactions" },
             ].map((item, idx) => (
               <Grid item xs={6} sm={6} md={6} key={idx}>
-                <Paper
-                  elevation={2}
-                  sx={{
-                    p: { xs: 2, sm: 3 },
-                    textAlign: "center",
-                    borderRadius: 2,
-                    backgroundColor: "#fff",
-                    minHeight: { xs: 70, sm: 90, md: 100 }, // reduced heights
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
+                <motion.div
+                  whileHover={{
+                    scale: [null, 1.1, 1.1],
+                    transition: {
+                      duration: 0.5,
+                      times: [0, 0.6, 1],
+                      ease: ["easeInOut", "easeOut"],
+                    },
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut",
                   }}
                 >
-                  <Typography
-                    variant="h6"
-                    sx={{ fontWeight: "bold", color: "#1a1a1a" }}
-                  >
-                    {item.value}
-                  </Typography>
-                  <Typography
-                    variant="body2"
+                  <Paper
+                    elevation={2}
                     sx={{
-                      color: "#1a1a1a",
-                      textDecoration: "underline",
-                      textDecorationColor: "#f6a04d",
+                      p: { xs: 2, sm: 3 },
+                      textAlign: "center",
+                      borderRadius: 2,
+                      backgroundColor: "#fff",
+                      minHeight: { xs: 70, sm: 90, md: 100 }, // reduced heights
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
                     }}
                   >
-                    {item.label}
-                  </Typography>
-                </Paper>
+                    <Typography
+                      variant="h6"
+                      sx={{ fontWeight: "bold", color: "#1a1a1a" }}
+                    >
+                      {item.value}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#1a1a1a",
+                        textDecoration: "underline",
+                        textDecorationColor: "#f6a04d",
+                      }}
+                    >
+                      {item.label}
+                    </Typography>
+                  </Paper>
+                </motion.div>
               </Grid>
             ))}
           </Grid>
@@ -99,23 +121,47 @@ const BusinessStats = () => {
             }}
           >
             {/* Illustration */}
-            <Paper
-              elevation={3}
-              sx={{
-                borderRadius: 3,
-                overflow: "hidden",
-                width: "100%",
-                maxWidth: { xs: 320, sm: 400, md: 500 },
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+                duration: 0.6,
               }}
             >
-              <img
-                src="/src/assets/woman.jpg"
-                alt="Illustration"
-                style={{ width: "100%", height: "auto" }}
-              />
-            </Paper>
+              <Paper
+                elevation={3}
+                sx={{
+                  borderRadius: 3,
+                  overflow: "hidden",
+                  width: "100%",
+                  maxWidth: { xs: 320, sm: 400, md: 500 },
+                }}
+              >
+                <img
+                  src="/src/assets/woman.jpg"
+                  alt="Illustration"
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </Paper>
+            </motion.div>
 
             {/* Quote */}
+            <motion.div
+                  whileHover={{
+                    scale: [null, 1.05, 1.05],
+                    transition: {
+                      duration: 0.5,
+                      times: [0, 0.6, 1],
+                      ease: ["easeInOut", "easeOut"],
+                    },
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut",
+                  }}>
             <Paper
               elevation={3}
               sx={{
@@ -134,6 +180,7 @@ const BusinessStats = () => {
                 productivity over the past year.”
               </Typography>
             </Paper>
+            </motion.div>
           </Box>
         </Grid>
       </Grid>

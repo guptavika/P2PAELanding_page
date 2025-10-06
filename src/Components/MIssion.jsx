@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
+import * as motion from "motion/react-client";
 
 const Mission = () => {
   return (
@@ -11,14 +12,19 @@ const Mission = () => {
       }}
     >
       <Grid
-            container
-            spacing={{ xs: 3, md: 4 }}
-            alignItems="center"
-            justifyContent="center"
-          >
-            {/* Left Side */}
-        <Grid item xs={12} md={6} sx={{maxWidth:580}}>
+        container
+        spacing={{ xs: 3, md: 4 }}
+        alignItems="center"
+        justifyContent="center"
+      >
+        {/* Left Side */}
+        <Grid item xs={12} md={6} sx={{ maxWidth: 580 }}>
           {/* Mission */}
+          <motion.div
+            animate={{x: [-300, 0] }} 
+            transition={{duration: 0.5,}}>
+
+          
           <Typography
             variant="h5"
             sx={{
@@ -81,11 +87,12 @@ const Mission = () => {
             sx={{ color: "#2a1a5e", lineHeight: 1.6 }}
           >
             Our values guide everything we do: integrity in every transaction,
-            innovation in creating cutting-edge solutions, customer-centricity by
-            keeping users at the heart of our services, inclusion to make
+            innovation in creating cutting-edge solutions, customer-centricity
+            by keeping users at the heart of our services, inclusion to make
             financial services accessible to all, and excellence in delivering
             high-quality solutions consistently.
           </Typography>
+          </motion.div>
         </Grid>
 
         {/* Right Image */}
@@ -98,13 +105,18 @@ const Mission = () => {
             justifyContent: "center",
           }}
         >
-          <Box
-            component="img"
-            src="/src/assets/mission-vision-values.png" // replace with your image path
+          <motion.img
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            src="/src/assets/mission-vision-values.png"
             alt="Mission Vision Values"
-            sx={{
-              maxWidth: { xs: "90%", md: "80%" },
-              borderRadius: 2,
+            style={{
+              maxWidth: "80%",
+              borderRadius: "16px",
             }}
           />
         </Grid>

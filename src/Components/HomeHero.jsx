@@ -13,7 +13,7 @@ export default function HomeHero() {
         maxWidth: "100%",
         height: "100vh",
       }}
-      xs={{ top: 225 }}
+      xs={{ top: 255 }}
     >
       <Grid
         container
@@ -119,66 +119,86 @@ export default function HomeHero() {
             position: "absolute",
           }}
         >
-          {/* Left Image */}
-          <marquee
-            direction="up"
-            behavior="scroll"
-            scrollamount="5"
-            style={{
+          {/* Left Image Column */}
+          <Box
+            sx={{
               display: "flex",
               flexDirection: "column",
+              overflow: "hidden",
               height: "1100px",
-              overflow: "hidden",
               position: "relative",
-              bottom: 440,
+              bottom: 370,
             }}
-            loop="infinite"
           >
-            {[...Array(4)].map((_, i) => (
-              <img
-                src="/src/assets/SITE DESIGN .png"
-                alt="hero illustration right"
-                style={{
-                  width: "85%",
-                  maxWidth: "220px",
-                  height: "auto",
-                  display: "block",
-                  bottom: 550,
-                  pb: 5,
-                }}
-              />
-            ))}
-          </marquee>
+            <motion.div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+              animate={{ y: ["0%", "-5%"] }} // scroll half (so loop continues seamlessly)
+              transition={{
+                repeat: Infinity,
+                duration: 20,
+                ease: "linear",
+              }}
+            >
+              {/* Duplicate the image set twice */}
+              {[...Array(8)].map((_, i) => (
+                <img
+                  key={i}
+                  src="/src/assets/SITE DESIGN .png"
+                  alt="scroll image"
+                  style={{
+                    width: "85%",
+                    maxWidth: "220px",
+                    height: "auto",
+                    display: "block",
+                    marginBottom: "1rem",
+                  }}
+                />
+              ))}
+            </motion.div>
+          </Box>
 
-          {/* Right Image */}
-          <marquee
-            direction="up"
-            behavior="scroll"
-            scrollamount="8"
-            loop="infinite"
-            style={{
+          {/* Right Image Column */}
+          <Box
+            sx={{
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
-              height: "800px",
+              height: "1100px",
               position: "relative",
-              bottom:140,
+              bottom: 370,
             }}
           >
-            {[...Array(5)].map((_, i) => (
-              <img
-                src="/src/assets/SITE DESIGN .png"
-                alt="hero illustration right"
-                style={{
-                  width: "95%",
-                  maxWidth: "420px",
-                  height: "auto",
-                  display: "block",
-                  pb: 5,
-                }}
-              />
-            ))}
-          </marquee>
+            <motion.div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+              animate={{ y: ["-10%", "0%"] }}
+              transition={{
+                repeat: Infinity,
+                duration: 18,
+                ease: "linear",
+              }}
+            >
+              {[...Array(10)].map((_, i) => (
+                <img
+                  key={i}
+                  src="/src/assets/SITE DESIGN .png"
+                  alt="scroll image"
+                  style={{
+                    width: "95%",
+                    maxWidth: "420px",
+                    height: "auto",
+                    display: "block",
+                    marginBottom: "1rem",
+                  }}
+                />
+              ))}
+            </motion.div>
+          </Box>
         </Grid>
       </Grid>
     </Box>

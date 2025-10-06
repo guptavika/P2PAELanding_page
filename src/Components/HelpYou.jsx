@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Container, Typography, Card, CardContent,Button, Stack } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+  Stack,
+} from "@mui/material";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
@@ -8,13 +16,16 @@ import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import QrCodeIcon from "@mui/icons-material/QrCode";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
+import * as motion from "motion/react-client";
+
 
 export default function ServicesGrid() {
   const services = [
     {
       icon: <ReceiptLongIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "BBPS (Bharat Bill Payment System)",
-      description: "Pay credit card, electricity, and utility bills instantly and securely.",
+      description:
+        "Pay credit card, electricity, and utility bills instantly and securely.",
     },
     {
       icon: <AccountBalanceIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
@@ -29,42 +40,48 @@ export default function ServicesGrid() {
     {
       icon: <PaymentsIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "Cash Management Services (CMS)",
-      description: "Streamlined cash collection and management solutions for businesses.",
+      description:
+        "Streamlined cash collection and management solutions for businesses.",
     },
     {
       icon: <ConfirmationNumberIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "Travel Booking",
-      description: "Hassle-free booking for IRCTC trains, buses, flights, and hotels.",
+      description:
+        "Hassle-free booking for IRCTC trains, buses, flights, and hotels.",
     },
     {
       icon: <VpnKeyIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "AEPS",
-      description: "Secure cash withdrawal, balance inquiry, and transactions using Aadhaar authentication.",
+      description:
+        "Secure cash withdrawal, balance inquiry, and transactions using Aadhaar authentication.",
     },
     {
       icon: <QrCodeIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "UPI Payments",
-      description: "Seamless and instant UPI transactions for customers and businesses.",
+      description:
+        "Seamless and instant UPI transactions for customers and businesses.",
     },
     {
       icon: <CreditCardIcon sx={{ fontSize: 32, color: "#6a1b9a" }} />,
       title: "Micro ATM (mATM)",
-      description: "Enable cash withdrawal and balance inquiry using debit cards at retail points.",
+      description:
+        "Enable cash withdrawal and balance inquiry using debit cards at retail points.",
     },
   ];
 
   return (
     <Box sx={{ py: 8, bgcolor: "#f9f9fb" }}>
       <Container maxWidth="xl">
-
- {/* Section Header */}
+        {/* Section Header */}
         <Box textAlign="center" mb={6}>
-          <Typography
-            variant="h4"
-            sx={{ fontWeight: 800, color: "#1a1a66", mb: 2 }}
-          >
-            How P2PAE Can Help You?
-          </Typography>
+          <motion.div animate={{ y: [-100, 0] }} transition={{ duration: 0.5 }}>
+            <Typography
+              variant="h4"
+              sx={{ fontWeight: 800, color: "#1a1a66", mb: 2 }}
+            >
+              How P2PAE Can Help You?
+            </Typography>
+          </motion.div>
           <Button
             variant="outlined"
             sx={{
@@ -81,13 +98,14 @@ export default function ServicesGrid() {
             Explore All Services →
           </Button>
         </Box>
-        
+
         {/* Gradient wrapper */}
         <Box
           sx={{
             p: 4,
             borderRadius: 6,
-            background: "linear-gradient(135deg, #fdfbfb 0%, #ebdefa 50%, #fbeafc 100%)",
+            background:
+              "linear-gradient(135deg, #fdfbfb 0%, #ebdefa 50%, #fbeafc 100%)",
             boxShadow: "0 8px 30px rgba(0,0,0,0.05)",
           }}
         >
@@ -97,9 +115,9 @@ export default function ServicesGrid() {
               display: "grid",
               gap: 4, // spacing between cards (theme spacing units)
               gridTemplateColumns: {
-                xs: "repeat(1, 1fr)",  // mobile: 1 column
-                sm: "repeat(2, 1fr)",  // small: 2 columns
-                md: "repeat(4, 1fr)",  // medium and up: 4 columns (this yields 2 rows for 8 items)
+                xs: "repeat(1, 1fr)", // mobile: 1 column
+                sm: "repeat(2, 1fr)", // small: 2 columns
+                md: "repeat(4, 1fr)", // medium and up: 4 columns (this yields 2 rows for 8 items)
               },
               alignItems: "stretch",
             }}
@@ -146,14 +164,23 @@ export default function ServicesGrid() {
 
                     <Typography
                       variant="subtitle1"
-                      sx={{ fontWeight: 700, color: "#2e1a63", mb: 1, textAlign: "center" }}
+                      sx={{
+                        fontWeight: 700,
+                        color: "#2e1a63",
+                        mb: 1,
+                        textAlign: "center",
+                      }}
                     >
                       {service.title}
                     </Typography>
 
                     <Typography
                       variant="body2"
-                      sx={{ color: "text.secondary", lineHeight: 1.6, textAlign: "center" }}
+                      sx={{
+                        color: "text.secondary",
+                        lineHeight: 1.6,
+                        textAlign: "center",
+                      }}
                     >
                       {service.description}
                     </Typography>
