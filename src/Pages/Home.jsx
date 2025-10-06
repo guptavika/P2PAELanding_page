@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeCenter from "../Components/HomeCenter";
 import HomeHero from "../Components/HomeHero";
 import HeroSection from "../Components/HeroSection";
@@ -8,6 +8,9 @@ import BusinessCard from "../Components/BusinessesCard";
 import Mission from "../Components/Mission";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HomeHero />

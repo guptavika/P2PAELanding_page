@@ -1,16 +1,19 @@
-import React from 'react'
-import BusinessCard from '../Components/BusinessesCard'
-import PartnersHome from '../Components/PartnersHome'
-import PartnersHero from '../Components/PartnersHero'
+import React, { useEffect } from "react";
+import BusinessCard from "../Components/BusinessesCard";
+import PartnersHome from "../Components/PartnersHome";
+import PartnersHero from "../Components/PartnersHero";
 
 function Partners() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
-    <PartnersHome/>
-    <PartnersHero/>
-    <BusinessCard/>
+      <PartnersHome />
+      <PartnersHero />
+      <BusinessCard />
     </>
-  )
+  );
 }
 
-export default Partners
+export default Partners;

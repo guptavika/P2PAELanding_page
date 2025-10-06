@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Typography,
@@ -10,6 +10,11 @@ import {
 } from "@mui/material";
 
 const AboutSection = () => {
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const valuesData = [
     {
       id: 1,
@@ -19,12 +24,12 @@ const AboutSection = () => {
     {
       id: 2,
       title: "Innovation",
-      desc: "We embrace creativity and seek to ind services constantly.",
+      desc: "We embrace creativity and seek to improve our services constantly.",
     },
     {
       id: 3,
       title: "Customer First",
-      desc: "We prioritize our customers' needs and strive to exceed their expectations.",
+      desc: "We prioritize our customers' needs and strive to exceed expectations.",
     },
     {
       id: 4,
