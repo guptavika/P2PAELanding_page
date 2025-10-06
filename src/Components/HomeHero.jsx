@@ -130,7 +130,7 @@ export default function HomeHero() {
               height: "1100px",
               overflow: "hidden",
               position: "relative",
-              bottom: 280,
+              bottom: 440,
             }}
             loop="infinite"
           >
@@ -162,7 +162,7 @@ export default function HomeHero() {
               overflow: "hidden",
               height: "800px",
               position: "relative",
-              top: 25,
+              bottom:140,
             }}
           >
             {[...Array(5)].map((_, i) => (
