@@ -8,11 +8,12 @@ export default function HomeHero() {
   return (
     <Box
       sx={{
+        position: "relative",
         bgcolor: "#fdfdfd",
-        py: 8,
         maxWidth: "100%",
-        maxHeight: "100vh",
+        height: "100vh",
       }}
+      xs={{ top: 225 }}
     >
       <Grid
         container
@@ -20,6 +21,7 @@ export default function HomeHero() {
         display={"flex"}
         justifyContent="flex-start"
         sx={{ maxWidth: "1200px", mx: "auto", px: 2 }}
+        // xs={{maxHeight:"100vh",}}
       >
         {/* Left Side (Text) */}
         <Grid
@@ -30,9 +32,8 @@ export default function HomeHero() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            alignItems:"center",
-            mt: { xs: 4, md: 16 },
-            ml:7,
+            alignItems: "center",
+            mt: { xs: 4, md: 26 },
           }}
         >
           <Typography
@@ -109,29 +110,31 @@ export default function HomeHero() {
             display: "flex",
             justifyContent: "space-between",
             mt: { xs: 4, md: 0 },
-            zIndex: 5,
             opacity: {
               xs: 0.1,
               sm: 0.2,
               md: 1,
             },
-            spacing:265,
-            ml:85,
+            ml: 85,
+            position: "absolute",
           }}
         >
           {/* Left Image */}
-          <motion.div
+          <marquee
+            direction="up"
+            behavior="scroll"
+            scrollamount="5"
             style={{
               display: "flex",
               flexDirection: "column",
+              height: "1100px",
+              overflow: "hidden",
+              position: "relative",
+              bottom: 280,
             }}
-            animate={{ y: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              duration: 18,
-            }}
+            loop="infinite"
           >
-            {[...Array(3)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <img
                 src="/src/assets/SITE DESIGN .png"
                 alt="hero illustration right"
@@ -140,37 +143,42 @@ export default function HomeHero() {
                   maxWidth: "220px",
                   height: "auto",
                   display: "block",
+                  bottom: 550,
+                  pb: 5,
                 }}
               />
             ))}
-          </motion.div>
+          </marquee>
 
           {/* Right Image */}
-          <motion.div
+          <marquee
+            direction="up"
+            behavior="scroll"
+            scrollamount="8"
+            loop="infinite"
             style={{
               display: "flex",
               flexDirection: "column",
-            }}
-            animate={{ y: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              duration: 15,
+              overflow: "hidden",
+              height: "800px",
+              position: "relative",
+              top: 25,
             }}
           >
-            {[...Array(3)].map((_, i) => (
+            {[...Array(5)].map((_, i) => (
               <img
                 src="/src/assets/SITE DESIGN .png"
                 alt="hero illustration right"
                 style={{
-                  width: "85%",
-                  maxWidth: "320px",
+                  width: "95%",
+                  maxWidth: "420px",
                   height: "auto",
                   display: "block",
-                  pb: 3,
+                  pb: 5,
                 }}
               />
             ))}
-          </motion.div>
+          </marquee>
         </Grid>
       </Grid>
     </Box>
