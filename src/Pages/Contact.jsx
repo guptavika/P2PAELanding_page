@@ -27,8 +27,8 @@ const ContactContainer = styled(Box)(({ theme }) => ({
   zIndex: 2,
   width: "100%",
   padding: "32px ", // Remove side padding, keep only vertical
-  // margin: '50px 0 32px 0', // Remove side margins
-  mt: { xs: 13, sm: 13, md: 13, lg: 13 },
+  margin: "50px 0 32px 0", // Remove side margins
+  mt: { xs: 13, sm: 13, md: 9, lg: 9 },
   position: "relative",
   backgroundImage: `url(${heroBackground})`,
   backgroundSize: "cover",
