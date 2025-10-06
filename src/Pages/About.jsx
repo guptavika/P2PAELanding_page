@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Typography, Divider, Container, Grid, Avatar, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  Container,
+  Grid,
+  Avatar,
+  Button,
+} from "@mui/material";
 
 const AboutSection = () => {
   const valuesData = [
@@ -66,7 +74,9 @@ const AboutSection = () => {
   ];
 
   return (
-    <Box sx={{ width: "100%", overflowX: "hidden" }}> {/* Added overflowX: "hidden" to root container */}
+    <Box sx={{ width: "100%", overflowX: "hidden" }}>
+      {" "}
+      {/* Added overflowX: "hidden" to root container */}
       {/* Hero Section with Background Image */}
       <Box
         sx={{
@@ -143,7 +153,6 @@ const AboutSection = () => {
           </Typography>
         </Box>
       </Box>
-
       {/* Mission Statement Section */}
       <Container
         maxWidth="lg"
@@ -169,17 +178,18 @@ const AboutSection = () => {
                 color: "rgb(20, 10, 83)",
               }}
             >
-              We create software that doesn't just function, it inspires. Our dedicated teams spend years honing their skills to craft solutions that delight users and elevate businesses. For us, software is more than a job—it's a passion.
+              We create software that doesn't just function, it inspires. Our
+              dedicated teams spend years honing their skills to craft solutions
+              that delight users and elevate businesses. For us, software is
+              more than a job—it's a passion.
             </Typography>
             <Typography
               variant="body1"
-              
               sx={{
                 textAlign: "center",
                 color: "rgb(20, 10, 83)",
-                fontSize:'46px',
-                fontWeight:'700',
-               
+                fontSize: "46px",
+                fontWeight: "700",
               }}
             >
               Excellence is our standard
@@ -187,7 +197,6 @@ const AboutSection = () => {
           </Grid>
         </Grid>
       </Container>
-
       {/* Vision and Description Section */}
       <Container
         maxWidth="lg"
@@ -216,17 +225,16 @@ const AboutSection = () => {
                   width: "100%",
                   height: "auto",
                   mb: 2,
-                  
                 }}
               />
               <Typography
                 variant="h3"
-                sx={{ 
-                  mb: 1, 
-                  fontWeight: "bold", 
+                sx={{
+                  mb: 1,
+                  fontWeight: "bold",
                   lineHeight: 1.2,
                   textAlign: "center",
-                  fontSize: { xs: "1.75rem", md: "2rem", lg: "1.7rem" } // Responsive font size
+                  fontSize: { xs: "1.75rem", md: "2rem", lg: "1.7rem" }, // Responsive font size
                 }}
               >
                 Simplifying Payments, Empowering People
@@ -250,9 +258,15 @@ const AboutSection = () => {
                 fontWeight: 300,
               }}
             >
-              We provide seamless solutions for bill payments, money transfers, and digital transactions. Our platform is designed to save you time, reduce complexity, and ensure every payment is fast, secure, and reliable.
-              <br /><br />
-              With years of experience in financial technology, we continue to innovate and bring convenient services to businesses and individuals alike.
+              We provide seamless solutions for bill payments, money transfers,
+              and digital transactions. Our platform is designed to save you
+              time, reduce complexity, and ensure every payment is fast, secure,
+              and reliable.
+              <br />
+              <br />
+              With years of experience in financial technology, we continue to
+              innovate and bring convenient services to businesses and
+              individuals alike.
             </Typography>
           </Grid>
 
@@ -271,21 +285,27 @@ const AboutSection = () => {
                 fontWeight: 300,
               }}
             >
-              Our approach focuses on creating intuitive platforms instead of relying solely on marketing or acquisitions. We prioritize secure transactions, customer support, and innovative features that make digital payments effortless.
-              <br /><br />
-              By investing in technology and customer experience, we empower users to handle their financial needs anytime, anywhere.
+              Our approach focuses on creating intuitive platforms instead of
+              relying solely on marketing or acquisitions. We prioritize secure
+              transactions, customer support, and innovative features that make
+              digital payments effortless.
+              <br />
+              <br />
+              By investing in technology and customer experience, we empower
+              users to handle their financial needs anytime, anywhere.
             </Typography>
           </Grid>
         </Grid>
       </Container>
-
       {/* Values Section */}
-      <Box sx={{ 
-        bgcolor: "#fff", 
-        py: 8,
-        width: "100%",
-        overflow: "hidden", // Prevent overflow
-      }}>
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          py: 8,
+          width: "100%",
+          overflow: "hidden", // Prevent overflow
+        }}
+      >
         <Container maxWidth="lg" sx={{ width: "100%", overflow: "hidden" }}>
           {/* Title */}
           <Box textAlign="center" mb={6}>
@@ -319,7 +339,11 @@ const AboutSection = () => {
           <Grid container spacing={6}>
             {valuesData.map((value) => (
               <Grid item xs={12} md={6} key={value.id}>
-                <Box display="flex" flexDirection="column" alignItems="flex-start">
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="flex-start"
+                >
                   {/* Number Circle */}
                   <Avatar
                     sx={{
@@ -368,12 +392,12 @@ const AboutSection = () => {
         </Container>
 
         {/* Get Started Section - Fixed width issues */}
-        <Container 
-          maxWidth="lg" 
-          sx={{ 
-            width: "100%", 
+        <Container
+          maxWidth="lg"
+          sx={{
+            width: "100%",
             overflow: "hidden",
-            mt: 8 
+            mt: 8,
           }}
         >
           <Grid
@@ -384,20 +408,20 @@ const AboutSection = () => {
               display: "flex",
               flexFlow: "wrap",
               width: "100%",
-              justifyContent:"space-between",
+              justifyContent: "space-between",
               paddingTop: { xs: "2rem", md: "4rem" },
               paddingBottom: { xs: "2rem", md: "4rem" },
             }}
           >
             {/* Left Content */}
-            <Grid 
-              item 
-              xs={12} 
+            <Grid
+              item
+              xs={12}
               lg={6}
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: { xs: 1, md: 2 }
+                gap: { xs: 1, md: 2 },
               }}
             >
               <Typography
@@ -416,7 +440,7 @@ const AboutSection = () => {
                 sx={{
                   color: "#140a53",
                   fontWeight: 500,
-                  mb: { xs: 2, md: 0 }
+                  mb: { xs: 2, md: 0 },
                 }}
               >
                 Download OurApp for free on the Google Play <br />
