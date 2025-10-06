@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Typography, Button, Stack } from "@mui/material";
+import { Box, Grid, Typography, Button, Stack } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import { motion } from "framer-motion";
@@ -10,9 +10,17 @@ export default function HomeHero() {
       sx={{
         bgcolor: "#fdfdfd",
         py: 8,
+        maxWidth: "100%",
+        maxHeight: "100vh",
       }}
     >
-      <Grid container spacing={{ xs: 3, md: 4 }} maxWidth="xl">
+      <Grid
+        container
+        spacing={{ xs: 3, md: 1 }}
+        display={"flex"}
+        justifyContent="flex-start"
+        sx={{ maxWidth: "1200px", mx: "auto", px: 2 }}
+      >
         {/* Left Side (Text) */}
         <Grid
           item
@@ -20,10 +28,11 @@ export default function HomeHero() {
           md={6}
           sx={{
             display: "flex",
-            justifyContent: "flex-start",
             flexDirection: "column",
-            mt: 9,
-            ml: 3,
+            justifyContent: "flex-start",
+            alignItems:"center",
+            mt: { xs: 4, md: 16 },
+            ml:7,
           }}
         >
           <Typography
@@ -34,7 +43,7 @@ export default function HomeHero() {
               fontFamily: "serif",
               mb: 2,
               letterSpacing: "0.02em",
-              lineHeight: 0.9,
+              lineHeight: 1,
             }}
           >
             Your Trusted <br />
@@ -58,7 +67,7 @@ export default function HomeHero() {
             payments, boost security, and scale with confidence.
           </Typography>
 
-          <Stack direction="row" spacing={2} sx={{ ml: 5 }}>
+          <Stack direction="row" spacing={2}>
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
@@ -91,46 +100,77 @@ export default function HomeHero() {
           </Stack>
         </Grid>
 
-        <Grid>
+        {/* Right Side (Images) */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            mt: { xs: 4, md: 0 },
+            zIndex: 5,
+            opacity: {
+              xs: 0.1,
+              sm: 0.2,
+              md: 1,
+            },
+            spacing:265,
+            ml:85,
+          }}
+        >
           {/* Left Image */}
-          <Grid
-            item
-            xs={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "flex-start" }}
+          <motion.div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+            animate={{ y: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 18,
+            }}
           >
-            <motion.img
-              src="/src/assets/SITE DESIGN .png"
-              alt="hero illustration left"
-              style={{
-                maxWidth: "5%",
-                height: "auto",
-              }}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            />
-          </Grid>
+            {[...Array(3)].map((_, i) => (
+              <img
+                src="/src/assets/SITE DESIGN .png"
+                alt="hero illustration right"
+                style={{
+                  width: "85%",
+                  maxWidth: "220px",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+            ))}
+          </motion.div>
 
           {/* Right Image */}
-          <Grid
-            item
-            xs={6}
-            md={3}
-            sx={{ display: "flex", justifyContent: "flex-end" }}
+          <motion.div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+            animate={{ y: ["0%", "-50%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 15,
+            }}
           >
-            <motion.img
-              src="/src/assets/SITE DESIGN .png"
-              alt="hero illustration right"
-              style={{
-                maxWidth: "10%",
-                height: "auto",
-              }}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            />
-          </Grid>
+            {[...Array(3)].map((_, i) => (
+              <img
+                src="/src/assets/SITE DESIGN .png"
+                alt="hero illustration right"
+                style={{
+                  width: "85%",
+                  maxWidth: "320px",
+                  height: "auto",
+                  display: "block",
+                  pb: 3,
+                }}
+              />
+            ))}
+          </motion.div>
         </Grid>
       </Grid>
     </Box>

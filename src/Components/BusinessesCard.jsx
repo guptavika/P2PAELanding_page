@@ -19,7 +19,7 @@ const BusinessStats = () => {
         {/* Left Side */}
         <Grid item xs={12} md={6}>
           <Typography
-            variant="h5"
+            variant="h4"
             sx={{
               fontWeight: "bold",
               color: "#f6a04d",
@@ -30,7 +30,7 @@ const BusinessStats = () => {
             Made in India
           </Typography>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
               fontWeight: "bold",
               color: "#fff",
