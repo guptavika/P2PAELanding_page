@@ -10,6 +10,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function SignupPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,6 +19,7 @@ export default function SignupPage() {
     email: "",
     password: "",
   });
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,6 +28,11 @@ export default function SignupPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Signup Submitted:", formData);
+    // Add your signup logic here
+  };
+
+  const handleLoginClick = () => {
+    navigate("/login"); // Navigate to login page
   };
 
   return (
@@ -36,6 +43,7 @@ export default function SignupPage() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        mt:10
       }}
     >
       <Container maxWidth="xs">
@@ -50,9 +58,9 @@ export default function SignupPage() {
         >
           <Typography
             variant="h4"
-            sx={{ mb: 3, fontWeight: 700, color: "#1a1333" }}
+            sx={{ fontWeight: 700, color: "#540fc8" }}
           >
-            Create an Account ✨
+            Create an Account
           </Typography>
 
           <Typography variant="body2" sx={{ mb: 4, color: "text.secondary" }}>
@@ -110,7 +118,7 @@ export default function SignupPage() {
               type="submit"
               sx={{
                 py: 1.4,
-                backgroundColor: "#1a1333",
+                backgroundColor: "#540fc8",
                 fontWeight: 600,
                 "&:hover": { backgroundColor: "#2d1f55" },
               }}
@@ -121,9 +129,20 @@ export default function SignupPage() {
 
           <Typography variant="body2" sx={{ mt: 3 }}>
             Already have an account?{" "}
-            <span style={{ color: "#2d1f55", cursor: "pointer" }}>
+            <Typography
+              component="span"
+              onClick={handleLoginClick}
+              sx={{
+                color: "#2d1f55",
+                cursor: "pointer",
+                fontWeight: 600,
+                '&:hover': {
+                  textDecoration: 'underline'
+                }
+              }}
+            >
               Log in
-            </span>
+            </Typography>
           </Typography>
         </Paper>
       </Container>
