@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 
-const MissionVisionValues = () => {
+const Mission = () => {
   return (
     <Box
       sx={{
@@ -17,7 +17,7 @@ const MissionVisionValues = () => {
             justifyContent="center"
           >
             {/* Left Side */}
-        <Grid item xs={12} md={6} sx={{maxWidth:600}}>
+        <Grid item xs={12} md={6} sx={{maxWidth:580}}>
           {/* Mission */}
           <Typography
             variant="h5"
@@ -113,4 +113,4 @@ const MissionVisionValues = () => {
   );
 };
 
-export default MissionVisionValues;
+export default Mission;

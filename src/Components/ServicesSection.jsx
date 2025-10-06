@@ -265,8 +265,8 @@ const ServicesSection = () => {
   ];
 
   const renderServiceCard = (service, index) => (
-    <Grid item xs={12} sm={12} md={6} lg={4} key={index} spacing={10}>
-      <ServiceCard bgcolor={service.bgColor}>
+    <Grid item xs={12} sm={12} md={6} lg={4} key={index} spacing={5} sx={{maxWidth:1200, ml:1}}>
+      <ServiceCard bgcolor={service.bgColor} sx={{mr:1.5}}>
         <Box sx={{ p: 3, flexGrow: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
             {service.badge && (
