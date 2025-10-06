@@ -502,7 +502,7 @@ const Footer = () => {
             }}
           >
             © 2025 All rights reserved
-          </Typography>
+          </Typography> 
         </Box>
       </Container>
     </Box>

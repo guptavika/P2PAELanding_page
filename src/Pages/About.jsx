@@ -148,18 +148,18 @@ const AboutSection = () => {
       <Container
         maxWidth="lg"
         sx={{
-          py: 10,
+          py: 4,
           px: { xs: 2, sm: 4 },
           width: "100%",
           overflow: "hidden", // Prevent overflow
         }}
       >
         <Grid container>
-          <Grid item xs={12}>
+          <Grid item xs={5}>
             <Typography
               variant="h4"
               sx={{
-                mb: 2,
+                mb: 6,
                 margin: 0,
                 lineHeight: 1.5,
                 fontSize: "1.25rem",
@@ -173,9 +173,13 @@ const AboutSection = () => {
             </Typography>
             <Typography
               variant="body1"
+              
               sx={{
                 textAlign: "center",
                 color: "rgb(20, 10, 83)",
+                fontSize:'46px',
+                fontWeight:'700',
+               
               }}
             >
               Excellence is our standard
@@ -198,11 +202,11 @@ const AboutSection = () => {
           container
           spacing={4}
           sx={{
-            marginTop: "-96px",
+            marginTop: "-100px",
           }}
         >
           {/* Left Column: Image + Heading */}
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} lg={12}>
             <Box display="flex" flexDirection="column" alignItems="flex-start">
               <Box
                 component="img"
@@ -212,6 +216,7 @@ const AboutSection = () => {
                   width: "100%",
                   height: "auto",
                   mb: 2,
+                  
                 }}
               />
               <Typography
@@ -220,7 +225,8 @@ const AboutSection = () => {
                   mb: 1, 
                   fontWeight: "bold", 
                   lineHeight: 1.2,
-                  fontSize: { xs: "1.75rem", md: "2rem", lg: "2.25rem" } // Responsive font size
+                  textAlign: "center",
+                  fontSize: { xs: "1.75rem", md: "2rem", lg: "1.7rem" } // Responsive font size
                 }}
               >
                 Simplifying Payments, Empowering People
@@ -230,7 +236,7 @@ const AboutSection = () => {
           </Grid>
 
           {/* Middle Column: Text */}
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} lg={12}>
             <Typography
               variant="body1"
               sx={{
@@ -251,7 +257,7 @@ const AboutSection = () => {
           </Grid>
 
           {/* Right Column: Text */}
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} lg={12}>
             <Typography
               variant="body1"
               sx={{
@@ -378,6 +384,7 @@ const AboutSection = () => {
               display: "flex",
               flexFlow: "wrap",
               width: "100%",
+              justifyContent:"space-between",
               paddingTop: { xs: "2rem", md: "4rem" },
               paddingBottom: { xs: "2rem", md: "4rem" },
             }}

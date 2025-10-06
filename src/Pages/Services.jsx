@@ -8,7 +8,7 @@ const HeroSection = () => {
     <Box
       sx={{
         minHeight: '90vh',
-        background: 'linear-gradient(135deg, #E8D4F8 0%, #F5E6FA 50%, #FAE8E0 100%)',
+           background: "linear-gradient(135deg, #e0c3fc 0%, #ffd8a8 100%)",
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

@@ -15,7 +15,7 @@ import { styled } from '@mui/material/styles';
 const SectionContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   padding: '32px',
-  margin: '48px 0px',
+  margin: '50px 0px',
   [theme.breakpoints.up('md')]: {
     margin: '48px 0px',
   },
@@ -30,7 +30,7 @@ const ServiceCard = styled(Card)(({ theme, bgcolor }) => ({
   flexDirection: 'column',
   border: '1px solid #E5E5E5',
   transition: 'all 0.3s ease',
-  maxWidth: 360,
+  maxWidth: 340,
   '&:hover': {
     transform: 'translateY(-4px)',
     boxShadow: '0px 8px 30px rgba(0, 0, 0, 0.15)',
@@ -265,7 +265,7 @@ const ServicesSection = () => {
   ];
 
   const renderServiceCard = (service, index) => (
-    <Grid item xs={12} sm={12} md={6} lg={4} key={index} spacing={5} sx={{maxWidth:1200, ml:1}}>
+    <Grid item xs={12} sm={12} md={6} lg={4} key={index} spacing={5} sx={{maxWidth:1200, ml:2}}>
       <ServiceCard bgcolor={service.bgColor} sx={{mr:1.5}}>
         <Box sx={{ p: 3, flexGrow: 1 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
