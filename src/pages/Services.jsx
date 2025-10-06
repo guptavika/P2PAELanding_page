@@ -7,12 +7,12 @@ const HeroSection = () => {
     <>
     <Box
       sx={{
-        minHeight: '100vh',
+        minHeight: '90vh',
         background: 'linear-gradient(135deg, #E8D4F8 0%, #F5E6FA 50%, #FAE8E0 100%)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        py: 8,
+        py: 5,
       }}
     >
       <Container maxWidth="lg">
@@ -39,8 +39,8 @@ const HeroSection = () => {
             variant="h1"
             sx={{
               color: '#1E1B4B',
-              fontSize: { xs: '2rem', sm: '3rem', md: '4rem' },
-              fontWeight: 700,
+              fontSize: { xs: '1rem', sm: '2rem', md: '3rem' },
+              fontWeight: 500,
               lineHeight: 1.2,
               mb: 4,
             }}
@@ -99,14 +99,14 @@ const HeroSection = () => {
               endIcon={<ArrowForward />}
               sx={{
                 borderColor: '#7C3AED',
-                color: '#7C3AED',
+                color: 'black',
                 px: 4,
                 py: 1.5,
                 fontSize: '1rem',
                 fontWeight: 600,
                 textTransform: 'none',
                 borderRadius: '8px',
-                borderWidth: '2px',
+                // borderWidth: '2px',
                 '&:hover': {
                   borderColor: '#6D28D9',
                   borderWidth: '2px',

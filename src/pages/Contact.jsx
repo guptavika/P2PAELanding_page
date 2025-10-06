@@ -26,9 +26,8 @@ import heroBackground from '../assets/hero.jpeg';
 const ContactContainer = styled(Box)(({ theme }) => ({
   zIndex: 2,
   width: '100%',
-  borderRadius: '2px',
-  padding: '32px',
-  margin: '50px 0px 32px 0px', // Remove side margins
+  padding: '32px 0', // Remove side padding, keep only vertical
+  margin: '50px 0 32px 0', // Remove side margins
   position: 'relative',
   backgroundImage: `url(${heroBackground})`,
   backgroundSize: 'cover',
@@ -39,7 +38,7 @@ const ContactContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   '&::before': {
     content: '""',
-    position: 'absolute',
+    position: 'relative',
     top: 0,
     left: 0,
     right: 0,
@@ -47,8 +46,8 @@ const ContactContainer = styled(Box)(({ theme }) => ({
     zIndex: -1,
   },
   [theme.breakpoints.down('md')]: {
-    padding: '16px',
-    margin: '20px 0px 32px 0px',
+    padding: '16px 0', // Remove side padding on mobile too
+    margin: '20px 0 32px 0',
     minHeight: '600px',
   },
 }));
@@ -57,14 +56,15 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   position: 'relative',
   zIndex: 1,
   width: '100%',
-  maxWidth: '1200px', // Limit max width
-  margin: '0 auto', // Center the content
-  padding: '0 16px', // Add side padding
+  maxWidth: '1200px',
+  margin: '0 auto',
+  padding: '0 16px', // Keep only internal padding
 }));
 
 const HeaderSection = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   marginBottom: '8px',
+  width: '100%',
 }));
 
 const ContactCard = styled(Card)(({ theme }) => ({
@@ -174,7 +174,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <>
+    <Box sx={{ 
+      width: '100%',
+      overflowX: 'hidden'
+    }}>
       {/* Contact Cards Section */}
       <ContactContainer>
         <ContentWrapper>
@@ -214,7 +217,11 @@ const ContactSection = () => {
             />
           </HeaderSection>
 
-          <Paper elevation={0} sx={{ boxShadow: 'none', backgroundColor: 'transparent' }}>
+          <Paper elevation={0} sx={{ 
+            boxShadow: 'none', 
+            backgroundColor: 'transparent',
+            width: '100%'
+          }}>
             <Grid container spacing={4} justifyContent="center">
               {contactData.map((contact, index) => {
                 const AvatarComponent = contact.avatarComponent;
@@ -281,21 +288,21 @@ const ContactSection = () => {
           alignItems: 'center',
           py: { xs: 4, md: 8 },
           width: '100%',
-          overflow: 'hidden', // Prevent horizontal scroll
+          overflow: 'hidden',
         }}
       >
         <Container 
           maxWidth="lg" 
           sx={{ 
             width: '100%',
-            px: { xs: 2, sm: 3, md: 4 } // Responsive padding
+            px: { xs: 2, sm: 3, md: 4 }
           }}
         >
           <Grid 
             container 
             spacing={6} 
             alignItems="center"
-            justifyContent="center" // Center the grid
+            justifyContent="center"
           >
             {/* Contact Form */}
             <Grid 
@@ -315,7 +322,7 @@ const ContactSection = () => {
                   p: { xs: 3, sm: 4, md: 4 },
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                   width: '100%',
-                  maxWidth: '500px', // Limit form width
+                  maxWidth: '500px',
                 }}
               >
                 <Typography
@@ -449,7 +456,7 @@ const ContactSection = () => {
                       textTransform: 'none',
                       borderRadius: '8px',
                       boxShadow: '0 4px 14px rgba(124, 58, 237, 0.4)',
-                      width: '100%', // Full width on mobile
+                      width: '100%',
                       alignSelf: { xs: 'stretch', sm: 'flex-start' },
                       px: 4,
                       '&:hover': {
@@ -478,7 +485,7 @@ const ContactSection = () => {
               <Box
                 sx={{
                   width: '100%',
-                  maxWidth: '400px', // Limit image width
+                  maxWidth: '400px',
                   height: "auto",
                   borderRadius: '16px',
                   overflow: 'hidden',
@@ -500,7 +507,7 @@ const ContactSection = () => {
           </Grid>
         </Container>
       </Box>
-    </>
+    </Box>
   );
 };
 
