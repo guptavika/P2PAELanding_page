@@ -32,28 +32,28 @@ export default function HomeCenter() {
           <Grid item xs={12} md={6} lg={6}>
             <Typography
               variant="subtitle1"
-              sx={{ color: "#1a1a66", fontWeight: 600, mb: 1 }}
+              sx={{ color: "#1a1a66", fontWeight: 600, mb: 1 ,m:{xs:-5, md:1}}}
             >
               Simplify Payments, Maximize Growth
             </Typography>
 
             <Typography
               variant="h3"
-              sx={{ fontWeight: 800, color: "#1a1a66", mb: 2 }}
+              sx={{ fontWeight: 800, color: "#1a1a66", mb: 2 ,m:{xs:5, md:1}}}
             >
               P2PAE
             </Typography>
 
             <Typography
               variant="subtitle2"
-              sx={{ color: "text.primary", fontWeight: 600, mb: 2 }}
+              sx={{ color: "text.primary", fontWeight: 600, mb: 2 ,m:{xs:1, md:1}}}
             >
               Combined solutions for all services
             </Typography>
 
             <Typography
               variant="body1"
-              sx={{ color: "text.secondary", mb: 4, maxWidth: "40%" }}
+              sx={{ color: "text.secondary", mb: 4, maxWidth: {xs:"100%",md:"40%"} }}
             >
               Experience financial empowerment in one unified platform – where
               convenience meets comprehensive solutions, redefining your
@@ -87,7 +87,8 @@ export default function HomeCenter() {
                 sx={{
                   fontSize: 40,
                   color: "#673ab7",
-                  mt: 0.5,
+                  mb: {xs:27,md:3.5},
+                  ml:{xs:-5,md:1}
                 }}
               />
               <Typography
