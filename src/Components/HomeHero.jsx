@@ -11,9 +11,9 @@ export default function HomeHero() {
         position: "relative",
         bgcolor: "#fdfdfd",
         maxWidth: "100%",
-        height: "100vh",
+        height: {xs:"90vh", md:"100vh"},
+      mt: { xs: 25 ,md:1}
       }}
-      xs={{ top: 255 }}
     >
       <Grid
         container
