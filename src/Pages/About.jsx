@@ -343,7 +343,7 @@ const AboutSection = () => {
           {/* Values Grid */}
           <Grid container spacing={6}>
             {valuesData.map((value) => (
-              <Grid item xs={12} md={6} key={value.id}>
+              <Grid item xs={12} md={6} key={value.id} sx={{maxWidth:400,ml:10}} >
                 <Box
                   display="flex"
                   flexDirection="column"
@@ -458,7 +458,7 @@ const AboutSection = () => {
                   display: { xs: "block", lg: "none" },
                 }}
               >
-                <Button
+                {/* <Button
                   variant="contained"
                   size="large"
                   disableElevation
@@ -472,7 +472,7 @@ const AboutSection = () => {
                   }}
                 >
                   Sign Up
-                </Button>
+                </Button> */}
               </Box>
             </Grid>
 
